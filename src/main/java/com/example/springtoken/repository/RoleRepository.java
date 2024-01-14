@@ -1,17 +1,14 @@
 package com.example.springtoken.repository;
 
-import java.util.Optional;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.springtoken.models.User;
-@Repository
-public interface RoleRepository extends JpaRepository<User, Long> {
-    Optional<User> findByUsername(String username);
+import com.example.springtoken.models.ERole;
+import com.example.springtoken.models.Role;
 
-    Boolean existsByUsername(String username);
-    Boolean existsByEmail(String email);
+import java.util.Optional;
+
+@Repository
+public interface RoleRepository extends JpaRepository<Role, Long> {
+    Optional<Role> findByName(ERole name);
 }
